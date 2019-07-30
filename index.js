@@ -6,7 +6,8 @@ const [ , , ...params ] = process.argv
 const [ functionName, payloadFilePath ] = params
 const getServiceData = () => {
   try {
-    readFileSync(payloadFilePath)
+    const content = readFileSync(join(process.cwd(), payloadFilePath), 'utf8')
+    return JSON.parse(content)
   } catch (e) {
     return null
   }
