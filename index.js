@@ -3,7 +3,7 @@
 const { readFileSync } = require('fs')
 const { join } = require('path')
 const [ , , ...params ] = process.argv
-const [ serviceName, mockFile ] = params
+const [ functionName, mockFile ] = params
 const getServiceData = () => {
   try {
     readFileSync(join(process.cwd(), 'data', `${mockFile}.json`))
@@ -12,7 +12,7 @@ const getServiceData = () => {
   }
 }
 
-if (!serviceName) {
+if (!functionName) {
   process.stderr.write(
     `Usage: ${require('./package').name} [function] <mock-file-path>\n`
   )
@@ -24,7 +24,7 @@ module.exports = (async () => {
     console.log(
       require(
         join(
-          process.cwd(), 'functions', serviceName)
+          process.cwd(), 'functions', functionName)
         ).handler(getServiceData())
     )
   } catch (e) {
