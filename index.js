@@ -14,7 +14,7 @@ const getServiceData = () => {
 
 if (!functionName) {
   process.stderr.write(
-    `Usage: ${require('./package').name} [function] <mock-file-path>\n`
+    `Usage: ${require('./package').name} [function] <payload-file>\n`
   )
   process.exit(127)
 }
