@@ -13,7 +13,7 @@ $ npm i -g https://github.com/kaerimichi/lambda-debug
 Put your functions in the "functions" folder and your mock data in the "data" folder as a JSON file and:
 
 ```
-$ lambda-debug [function] <mock-file-path>
+$ lambda-debug [function] <payload-file>
 ```
 
 ## Example
