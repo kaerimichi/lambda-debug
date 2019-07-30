@@ -22,12 +22,11 @@ if (!functionName) {
 
 module.exports = (async () => {
   try {
-    console.log(
-      require(
-        join(
-          process.cwd(), 'functions', functionName)
-        ).handler(getServiceData())
-    )
+    const result = require(
+      join(process.cwd(), 'functions', functionName)
+    ).handler(getServiceData())
+
+    process.stdout.write(JSON.stringify(result))
   } catch (e) {
     throw e
   }
