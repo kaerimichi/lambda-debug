@@ -3,10 +3,10 @@
 const { readFileSync } = require('fs')
 const { join } = require('path')
 const [ , , ...params ] = process.argv
-const [ functionName, mockFile ] = params
+const [ functionName, payloadFilePath ] = params
 const getServiceData = () => {
   try {
-    readFileSync(join(process.cwd(), 'data', `${mockFile}.json`))
+    readFileSync(payloadFilePath)
   } catch (e) {
     return null
   }
