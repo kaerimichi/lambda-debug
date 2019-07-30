@@ -25,7 +25,7 @@ module.exports = (async () => {
       require(
         join(
           process.cwd(), 'functions', serviceName)
-        ).handler(getServiceData)
+        ).handler(getServiceData())
     )
   } catch (e) {
     throw e
